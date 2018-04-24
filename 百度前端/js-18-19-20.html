@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+	<style type="text/css">
+		
+		div{
+			background-color: red;
+			display: inline-block;
+			padding: 0 10px;
+			margin: 20px 20px;
+		}
+		#trick{
+			background-color: none;
+		}
+	</style>
+</head>
+<body>
+<input type="text" name="" id="text">	
+<button id="one" class="button">左入</button>
+<button id="two" class="button">右入</button>
+<button id="three" class="button">左出</button>
+<button id="four" class="button">右出</button><br>
+<textarea placeholder="请输入要查询的值" id="textarea"></textarea>
+<button id="serch">查询</button>
+<div id="trick">
+	<div>1</div>
+</div>
+<script type="text/javascript">
+	var text=document.getElementById('text'),
+		buttonmain=document.getElementsByTagName('button'),
+		trick=document.getElementById('trick'),
+		tricks=trick.children,
+		button=document.getElementById('serch'),
+		textarea=document.getElementById('textarea'),
+		s='';
+
+	
+		for(var i=0;i<buttonmain.length;i++){
+
+			buttonmain[i].onclick=function () {
+
+					if (this.id=='two') {
+
+						if (text.value<10 || text.value>100) {
+
+							alert('请输入10和100之间的整数');
+						}
+						else {
+							
+						
+
+						var ele=document.createElement('div');
+							ele.textContent=text.value;
+						
+
+						trick.appendChild(ele);}
+
+
+					}
+					if (this.id=='one') {
+
+							if (text.value<10 || text.value>100) {
+
+							alert('请输入10和100之间的整数');
+						}
+						else {
+							
+						
+						var ele=document.createElement('div');
+							ele.textContent=text.value;
+						
+
+						trick.insertBefore(ele, tricks[0]);}
+
+
+					}
+					if (this.id=='three') {
+
+						trick.removeChild(tricks[0]);
+					}
+					if (this.id=='four'){
+
+						trick.removeChild(tricks[tricks.length-1]);
+					}
+
+					if (tricks.length>60) {
+
+						if (this.id=='one') {
+							trick.removeChild(tricks[0]);
+						}
+						else if(this.id=='two'){
+							trick.removeChild(tricks[tricks.length-1]);
+						}
+						alert('最多添加60个哦');
+					}
+}}
+
+				button.onclick=function () {
+
+					
+						for(var j=0;j<tricks.length;j++){
+
+							tricks[j].style.backgroundColor = 'red';
+						}
+
+						for(var i=0;i<tricks.length;i++){
+						
+							
+						if (textarea.value==tricks[i].textContent) {
+
+							tricks[i].style.backgroundColor='#ccc';
+							
+						}
+					}
+				}
+
+</script>
+</body>
+</html>
