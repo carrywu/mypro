@@ -1,0 +1,20 @@
+html{
+    font-family: '微软雅黑';
+    font-size: 16px;
+}
+.main-item-one p, .main-item-two p{
+    display: inline-block;
+    margin-right: 3rem;
+}
+.main-item-one h3, .main-item-two h3{
+    display: inline-block;
+    margin-right: 1rem;
+   
+}
+h3{
+    font-size: 1rem;
+    font-weight: bold;
+}
+section{
+    margin-top: 1rem;
+}
