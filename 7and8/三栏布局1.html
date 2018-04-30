@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        
+        .container{
+            padding-left: 220px;
+            padding-right: 300px;
+            height: 500px;
+        }
+        .left, .main, .right{
+            float: left;
+            height: 500px;
+        }
+        .left{
+            width: 220px;
+            background-color: dodgerblue;
+            margin-left: -100%;
+            position: relative;
+            left: -220px
+        }
+        .main{
+            width: 100%;
+            background-color: dimgrey;
+        }
+        .right{
+            width: 300px;
+            background-color: deeppink;
+            margin-left:-300px;
+            position: relative;
+            right: -300px;
+
+        }
+        /* 此布局存在缺陷，当页面宽度小于775px时存在危险 */
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+            <div class="main"></div>
+        <div class="left"></div>
+        
+        <div class="right"></div>
+    </div>
+</body>
+</html>
