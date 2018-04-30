@@ -116,21 +116,20 @@
             border-right: dimgrey 1px solid;
             background-color:#fff;
         }
-        .main-content-container{
-            background-color: forestgreen;
-            margin-top: 10px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content:space-between;
+        .container ul{
+            list-style: none;
         }
-        .main-content-container div{
-            background-color: #ccc;
-            margin: 10px 10px 0 0;
-            text-align: center;
-            padding: 40px;
-            font-size: 14px;
-            flex:1;
-
+        .container ul li{
+            display: flex;
+            justify-content: flex-start;
+            
+        }
+        .container ul li p{
+            padding: 80px;
+           
+            flex-grow: 1;
+            margin: 5px 5px 0 0;
+            border: 1px solid #ccc;
         }
         footer{
             height: 100px;
@@ -184,18 +183,30 @@
                 </div>
             </div>
             <div class="container">
-            <div class="main-content-container">
-                <div>This is Content 1</div>
-                <div>MabyContent 2</div>
-                <div>Content 3</div>
-                <div>Content 4</div>
-                <div>Content 5</div>
-                <div>Content 6</div>
-                <div>Content 7</div>
-                <div>Content 8</div>
-                <div>Content 9</div>
-                <div>Content 10</div>
-            </div>
+            <ul>
+                
+                <li>
+                <p>This is Content 1</p>
+                <p>Maby Content 2</p>
+                <p>Content 3</p>
+                </li>
+            
+            
+                <li>
+                <p>Content 4</p>
+                <p>Content 5</p>
+                <p>Content 6</p>
+                <p>Content 7</p>
+                </li>
+                
+                
+                <li>
+                <p>Content 8</p>
+                <p>Content 9</p>
+                <p>Content 10</p>
+                </li>
+                
+            </ul>
             </div>
         </div>
     </main>
