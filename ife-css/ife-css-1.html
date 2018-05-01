@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body{
+            text-align: center;
+        }
+        .container{
+            display: inline-block;
+        }
+        p{
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        input{
+            width: 6rem;
+            height: 2rem;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            border-style: none;
+            background-color: #fff;
+            border: #ccc 1px solid;
+        }
+        p{
+            position: relative;
+            transition: all 2s;
+        }
+        p::before,p::after{
+            display: inline-block;
+            content: ' ';
+            height: 2px;
+            width: 0;
+            background-color: goldenrod;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transition: all 1s;
+        }
+        p.prv::before{
+            left: 0%;
+            width: 50%;
+        }
+        p.las::after{
+            width: 50%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <p>前端学院</p>
+        <input type="submit" value="切换样式">
+    </div>
+    <script>
+        
+        (function () {
+            var button=document.getElementsByTagName('input')[0],
+                header=document.getElementsByTagName('p')[0],
+
+                
+                count=0;
+                button.onmousedown=function(){
+
+                    if(count==0){
+                        button.style.backgroundColor='#c3c';
+                        header.style.color='green';
+                        header.setAttribute('class','prv las');
+                        
+                        
+                        count++;
+                    }
+                    else{
+                        header.style.color='#000';
+                        button.style.backgroundColor='#c3c';
+                        header.setAttribute('class',' ');
+
+
+                        count=0;
+                    }
+                    
+                }
+                button.onmouseup=function(){
+
+                    button.style.backgroundColor='#fff';
+                }
+
+                
+            
+        })()
+    </script>
+</body>
+</html>
