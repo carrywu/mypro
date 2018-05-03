@@ -1,0 +1,344 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: '微软雅黑';
+}
+.container{
+    width: 960px;
+    height: auto;
+    margin: 0 auto;
+}
+.clear{
+    overflow: hidden;
+    zoom: 1;
+}
+header{
+    background-color: beige;
+    text-align: center;
+    padding: 150px;
+}
+header h1{
+    font-size: 4rem;
+    font-weight: lighter;
+}
+div.header-textr h1,.header-p, .header-form{
+    margin: 50px auto;
+}
+.header-form{
+    border: 1px solid #ccc;
+    padding: 30px 0;
+}
+.header-form input,.header-form h3,.header-form p{
+    margin:40px auto;
+}
+.header-form input{
+    display: inline-block;
+    margin:0 5px 30px 5px;
+    width: 280px;
+    height: 35px;
+
+}
+.header-form input:not(:nth-last-of-type(1)){
+    text-indent: 16px;
+}
+.header-form input[type=submit]{
+    width: 150px;
+    height: 40px;
+    border-style: none;
+    background-color: darkturquoise;
+}
+main{
+    text-align: center;
+}
+main .main-one{
+    padding: 70px 0;
+}
+main div.main-one p,main div.main-one h1{
+    margin: 30px auto;
+}
+main div.main-one >p{
+    font-size: 14px;
+    font-weight: bold;
+}
+main .main-one h1{
+    font-weight: lighter;
+    font-size: 2.8rem;
+
+}
+main article.main-one-contentlist {
+    text-align: justify;
+    padding: 50px 0;
+}
+main article.main-one-contentlist section{
+    position: relative;
+    width: 360px;
+    float: left;
+    padding: 20px 50px;
+    margin-left: 10px;
+
+}
+main article.main-one-contentlist section::before{
+    content: url(images/phone_03.png.gif);
+    position: absolute;
+    left: -25px;
+    top: 0;
+}
+main article.main-one-contentlist section p{
+    text-align: justify;
+}
+article.two{
+    background-color: lightgray;
+}
+div.main-two{
+    padding: 100px 0;
+    text-align: left;
+    float: left;
+}
+div.main-two>h1,div.main-two>p{
+    margin: 50px auto;
+}
+div.main-two>h1{
+    font-weight: inherit;
+    font-size: 2.5rem;
+}
+div.main-two>p{
+    line-height: 1.5rem;
+}
+div.main-two>input{
+    width: 250px;
+    height: 50px;
+    border-style: none;
+}
+div.main-two>input.one{
+    background-color: #000;
+    color: #fff;
+    margin-right: 15px;
+}
+article.three{
+    border-bottom: #ccc 1px solid;
+    padding: 80px 0;
+}
+article.three h1{
+    font-size: 3rem;
+    margin: 80px auto;
+}
+article.three article{
+    text-align: justify;
+    font-size: 0;
+    text-align: center;
+}
+article.three span{
+    display: block;
+    background: url(images/前端学院设计图_07.png.gif) no-repeat center;
+    width: 150px;
+    height: 50px;
+    margin: 20px auto;
+}
+article.three section{
+    box-sizing: border-box;
+    font-size: 16px;
+    width: 33.33%;
+    height: auto;
+    display: inline-block;
+    padding: 0 25px;
+}
+article.four{
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+article.four div.content-one{
+    margin: 70px auto;
+}
+article.four div.content-one> img,article.four div.content-one> div{
+    display: inline-block;
+}
+article.four div.content-one> div{
+    vertical-align: top;
+    font-size: 15px;
+    margin: 30px 20px;
+    line-height: 1.5rem;
+}
+rticle.four div.content-one> div>h2{
+    font-weight: lighter;
+}
+p.four-p{
+    color: #aaa;
+    margin: 20px auto;
+}
+article.five{
+    border-bottom:1px solid #ccc;
+    padding-bottom: 100px;
+}
+article.five .five-header {
+    margin: 100px auto 70px auto;
+}
+article.five .five-header h1{
+    margin: 30px auto;
+    font-size: 2.5rem;
+    font-weight: lighter;
+}
+article.five .five-header p{
+    line-height: 1.5rem;
+    color: #ccc;
+}
+article.five .five-img{
+    text-align: center
+}
+article.five .five-img div.posite{
+    display: inline-block;
+    position: relative;
+}
+article.five .five-img div.posite span{
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: 20px;
+    left:10px;
+    width: 400px;
+    height: 300px;
+    cursor: pointer;
+}
+
+article.five .five-img div.posite span div{
+    line-height: 3em;
+    margin-top:50px ;
+    text-align: center;
+    display: none;
+}
+article.five .five-img div.posite span:hover{
+    background-color: dimgrey;
+    opacity: .8;
+}
+article.five .five-img div.posite span:hover >div{
+    display: block;
+}
+article.five .five-img .five-img-two span.three{
+    
+    top: 0;
+}
+article.five .five-img .five-img-two span.four{
+    
+    top: 0;
+}
+article.five .five-img div.posite span div i.one{
+    display: inline-block;
+width: 40px;
+height: 40px;
+background-color: gold;
+margin: 10px 10px;
+}
+article.five .five-img div.posite span div i.one{
+    display: inline-block;
+width: 40px;
+height: 40px;
+background-color: gold;
+margin: 10px 10px;
+}
+article.five .five-img div.posite span div i.one{
+    display: inline-block;
+width: 40px;
+height: 40px;
+background-color: gold;
+margin: 10px 10px;
+}
+
+article.five .five-img .five-img-one img{
+    width: 400px;
+    height: 300px;
+    display: inline-block;
+    margin: 20px 10px;
+}
+article.five .five-img .five-img-two img{
+    width: 400px;
+    height: 300px;
+    display: inline-block;
+    margin: 0 10px;
+}
+article.six{
+    padding: 100px;
+}
+article.six div.left{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+article.six div.left p{
+    font-weight: bold;
+    font-size: 1.5rem;
+    word-spacing: 0.5rem;
+}
+article.six div.left input,article.six div.left textarea{
+    width: 85%;
+    height: 40px;
+    margin: 25px auto;
+    text-indent: 1rem;
+}
+article.six div.left input:last-child{
+    border-style: none;
+    background-color: #4a4a4a;
+    color: #fff;
+}
+article.six div.left textarea{
+    height: 25%;
+    padding-top:1rem; 
+}
+article.six div.right{
+    float: left;
+    margin-left: 100px;
+    margin-top: 40px;
+    text-align: left;
+}
+article.six div.right h1{
+    font-weight: lighter;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+article.six div.right >p{
+    margin-bottom: 50px;
+    line-height: 1.5rem;
+    color: #aaa;
+}
+article.six div.right> div p{
+    line-height: 1.5rem;
+    margin: 30px;
+    position: relative;
+}
+article.six div.right> div p::before{
+    content: ' ';
+    width: 25px;
+    height: 25px;
+    background-color: dimgrey;
+    position: absolute;
+    left: -30px;
+}
+footer{
+    background-color: #000;
+    text-align: center;
+    padding: 80px 0 160px 0;
+
+}
+footer .footer-one,footer .footer-two,footer .footer-three,
+footer .footer-four{
+    display: inline-block;
+    color: #aaa;
+    vertical-align: top;
+    margin: 0 150px;
+}
+
+footer p {
+    margin: 20px auto;
+    text-align: left;
+}
+footer .footer-four div{
+    text-align: left;
+}
+footer p.first{
+    font-weight: bold;
+    color: #fff;
+}
+footer .footer-four:last-child i{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+}
