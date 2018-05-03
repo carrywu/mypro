@@ -16,6 +16,7 @@ header{
     background-color: beige;
     text-align: center;
     padding: 150px;
+    min-width: 960px;
 }
 header h1{
     font-size: 4rem;
@@ -49,6 +50,7 @@ div.header-textr h1,.header-p, .header-form{
 }
 main{
     text-align: center;
+    min-width: 960;
 }
 main .main-one{
     padding: 70px 0;
@@ -315,6 +317,7 @@ footer{
     background-color: #000;
     text-align: center;
     padding: 80px 0 160px 0;
+    min-width: 1820px;
 
 }
 footer .footer-one,footer .footer-two,footer .footer-three,
