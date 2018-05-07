@@ -6,6 +6,9 @@
 html,body{
     height: 100%;
 }
+::-webkit-scrollbar{
+    display:none;
+  }
 .left{
     width: 350px;
     height: 100%;
