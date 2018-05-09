@@ -13,44 +13,76 @@
     <button id="divide-btn">除</button>
     <p id="result">运算结果</p>
     <script>
-    	var add=document.getElementById('add-btn'),
+        var add=document.getElementById('add-btn'),
           minus=document.getElementById('minus-btn'),
-    	  times=document.getElementById('times-btn'),
-    	 divide=document.getElementById('divide-btn'),
+          times=document.getElementById('times-btn'),
+         divide=document.getElementById('divide-btn'),
        number_1=document.getElementById('first-number'),
        number_2=document.getElementById('second-number'),
          result=document.getElementById('result');
-		 
-    	 	add.onclick=function (argument) {
-				var n1= parseInt(number_1.value);
-    	 	var n2= parseInt(number_2.value);
-    	 		result.textContent=' ';
-    	 		result.textContent=n1+n2;
-    	 		// body...
-    	 	}
-    	  minus.onclick=function (argument) {
-			var n1= parseInt(number_1.value);
-    	 	var n2= parseInt(number_2.value);
-    	  		result.textContent=' ';
-    	  		result.textContent=n1-n2;
-    	 		// body...
-    	 	}
-    	  times.onclick=function (argument) {
-			var n1= parseInt(number_1.value);
-    	 	var n2= parseInt(number_2.value);
-    	  		result.textContent=' ';
-    	  		result.textContent=n1*n2;
-    	 		// body...
-    	 	}
-    	 divide.onclick=function (argument) {
-			var n1= parseInt(number_1.value);
-    	 	var n2= parseInt(number_2.value);
-    	 		result.textContent=' ';
-    	 		result.textContent=n1%n2;
-    	 		// body...
-    	 	}
-    	 
+         
+         
 
+            add.onclick=function (argument) {
+                var n1= parseInt(number_1.value);
+            var n2= parseInt(number_2.value);
+            if (isNaN(n1) || isNaN(n2)) {
+                result.textContent='请输入数字';
+            }
+            else {
+                 result.textContent=' ';
+                result.textContent=n1+n2;
+            }
+               
+                // body...
+            }
+          minus.onclick=function (argument) {
+            var n1= parseInt(number_1.value);
+            var n2= parseInt(number_2.value);
+               if (isNaN(n1) || isNaN(n2)) {
+                result.textContent='请输入数字';
+            }
+            else {
+                 result.textContent=' ';
+                result.textContent=n1-n2;
+            }
+                // body...
+            }
+          times.onclick=function (argument) {
+            var n1= parseInt(number_1.value);
+            var n2= parseInt(number_2.value);
+               if (isNaN(n1) || isNaN(n2)) {
+                result.textContent='请输入数字';
+            }
+            else {
+                 result.textContent=' ';
+                result.textContent=n1*n2;
+            }
+                // body...
+            }
+         divide.onclick=function (argument) {
+            var n1= parseInt(number_1.value);
+            var n2= parseInt(number_2.value);
+               if (isNaN(n1) || isNaN(n2)) {
+
+                    result.textContent='请输入数字';
+            }
+
+            else {
+                if (n2==0) {
+                    result.textContent='分母不能为0';
+                }
+                else {
+                result.textContent=' ';
+                result.textContent=n1/n2;
+                }
+                 
+            }
+                // body...
+            }
+        
+     
+         
     </script>
 </body>
 </html>
