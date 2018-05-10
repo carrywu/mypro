@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">    
+    <title>IFE ECMAScript</title>
+</head>
+<body>        
+    <input id="dec-number" type="number" placeholder="输入一个十进制非负整数">
+    <input id="bin-bit" type="number" placeholder="输入数字位数">
+    <button id="trans-btn">转化为二进制</button>
+    <p id="result">运算结果</p>
+    <script>
+
+        var result=document.getElementById('result'),
+            dec=document.getElementById('dec-number'),
+            btn=document.getElementById('trans-btn'),
+            bin=document.getElementById('bin-bit');
+function dec2bin(decNumber) {
+    btn.onclick=function () {
+        var ten=dec.value;
+        
+        var float=ten.toString().indexOf('.');
+        
+            if(float>-1 || ten<0){
+                console.log('请输入一个非负整数');
+            }
+            else{
+                var ary= [];
+                function two(ten) {
+                    var twos= Math.floor(ten/2);
+                        ary.unshift(ten%2);
+                    if(twos>0){
+                        two(twos);
+                    }
+                    else{
+                        result.textContent=ary.join('');
+                        console.log(ary);
+                    }
+                    
+                }two(ten);
+            }
+        (function () {
+            if(bin.value==''){
+    return;
+}
+else{
+    if(isNaN(bin.value)){
+        alert('请输入数字！')
+    }
+    else{
+        var num=bin.value;
+        if(num<ary.length){
+            return;
+        }
+        else{
+            var arytwo=[];
+    for(var i=0;i<(num - ary.length);i++){
+        
+            arytwo.unshift(0);
+
+    }
+        }
+        ary.unshift(arytwo.join(''));
+    result.textContent=ary.join('');
+    }
+}
+            
+        })();
+    }
+}dec2bin();
+
+    </script>
+</body>
+</html>
