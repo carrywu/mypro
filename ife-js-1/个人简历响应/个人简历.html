@@ -359,6 +359,31 @@
 				}
 			
 		})();
+		(function () {
+
+			var date=new Date();
+			
+			var index=date.toString().indexOf(':');
+
+				var time=date.toString().slice(index-2,index);
+
+				if((time>=0 && time<=4) || (time>=22 && time <=24)){
+					alert('快睡吧，很晚了');
+				}
+				else if(time>4 && time<10){
+					alert('早起的虫儿被鸟吃');
+				}
+				else if(time>10 && time<14){
+					alert('中午吃啥好呢');
+				}
+				else if(time>14 && time<17){
+					alert('坐等下班');
+				}
+				else{
+					alert('晚上好！');
+				}
+			
+		})();
 </script>
 </body>
 </html>
