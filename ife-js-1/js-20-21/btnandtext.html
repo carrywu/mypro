@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input id="name" type="text">    
+<button id="submit-btn">Submit</button>
+<script>
+    var btn=document.getElementById('submit-btn'),
+        text=document.getElementById('name');
+
+        (function () {
+            text.onkeydown=function(e){
+                if(e.keyCode==13 || e.which==13){
+                    console.log(e.keyCode);
+                    btn.onclick=click();
+                }
+                else if(e.keyCode==27 || e.which==27){
+                    console.log(e.keyCode);
+                    text.value='';
+                }
+                else{
+                    return;
+                }
+                btn.onclick=click;
+
+                function click() {
+                    console.log(text.value);
+                }
+            }
+        })();
+</script>
+</body>
+</html>

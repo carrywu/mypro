@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+    
+    div{
+        margin: 0 auto;
+        text-align: center;
+    }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="" alt="">
+    </div>
+    <script>
+    var img=document.querySelector('img[src]'),
+        i=1;
+    setInterval(function () {
+        img.setAttribute('src','images/img ('+i+').png');
+        i++;
+        if(i>17){
+            i=1;
+        }
+    },100);
+    
+    </script>
+</body>
+</html>
