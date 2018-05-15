@@ -29,15 +29,33 @@
     //         i=1;
     //     }
     // },100);
-        var Y=0;
-        setInterval(
-            function cgposy() {
+        var Y=0,
+            timeone=null,
+            timetwo=null;
+            function cg() {
+                
+            
+        timeone=setInterval(
+            function () {
             div.style.backgroundPositionY=Y+'px';
             Y+=480;
             if(Y>=8160){
-                Y=0;
+                clearInterval(timeone);
+
+                timetwo=setInterval(
+                    function () {
+                        div.style.backgroundPositionY=Y+'px';
+                        Y-=480;
+                        if(Y<=480){
+                            clearInterval(timetwo);
+                            cg();
+                        }
+                    }
+                ,100)
             }
         },100);
+            };
+            cg();
     
     </script>
 </body>
