@@ -8,25 +8,36 @@
     
     div{
         margin: 0 auto;
-        text-align: center;
+        width: 480px;
+        height: 480px;
+        background-image: url(images/img1.jpg);
     }
     </style>
     <title>Document</title>
 </head>
 <body>
     <div>
-        <img src="" alt="">
+        
     </div>
     <script>
-    var img=document.querySelector('img[src]'),
-        i=1;
-    setInterval(function () {
-        img.setAttribute('src','images/img ('+i+').png');
-        i++;
-        if(i>17){
-            i=1;
-        }
-    },100);
+    var div=document.querySelector('div');
+    //     i=1;
+    // setInterval(function () {
+    //     img.setAttribute('src','images/img ('+i+').png');
+    //     i++;
+    //     if(i>17){
+    //         i=1;
+    //     }
+    // },100);
+        var Y=0;
+        setInterval(
+            function cgposy() {
+            div.style.backgroundPositionY=Y+'px';
+            Y+=480;
+            if(Y>=8160){
+                Y=0;
+            }
+        },100);
     
     </script>
 </body>
