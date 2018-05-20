@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    /*
+// 实现一个字符串头尾去除空格的函数
+// 注意需要去除的空格，包括全角、半角空格
+// 暂时不需要学习和使用正则表达式的方式
+// */
+// function diyTrim(str) {
+//     console.log(str.length);
+//     var result = "";
+//     var i;
+//     var j;
+//     for(i=0;i<str.length;i++){
+
+//         if(str.charAt(i)==' '||str.charAt(i)=='　') continue;
+//         else break;
+        
+//     }
+
+//     result=str.slice(i);
+
+
+//     for(j=result.length-1;j>=0;j--){
+
+//         if(result.charAt(j)==' '||result.charAt(j)=='　')continue;
+//         else break;
+//     }
+//     result=result.slice(0,j+1);
+//     console.log(result.length);
+    
+//     // do something
+
+//     return result
+// } 
+
+// // 测试用例
+// console.log(diyTrim(' a f b    ')); // ->a f b
+// console.log(diyTrim('    ffdaf    ')); // ->ffdaf
+// console.log(diyTrim('1    ')); // ->1
+// console.log(diyTrim('　　f')); // ->f
+// console.log(diyTrim('  　  a f b 　　 ')); // ->a f b
+// console.log(diyTrim(' ')); // ->
+// console.log(diyTrim('　')); // ->
+// console.log(diyTrim('')); // ->
+
+// /*
+// 去掉字符串str中，连续重复的地方
+// */
+function removeRepetition(str) {
+
+    if(str.length>=1){
+
+    
+
+    var result = "";
+    var Q=str;
+
+    // for(i=0;i<str.length;i++){
+    //     if(arr.toString().indexOf(str.charAt(i))<0){
+
+        
+    //     arr.push(str.charAt(i));
+    //     }
+
+    // }
+    Q=Q.match(/(.)\1*/g); 
+    console.log(Q.length);
+
+    for(var i=0;i<Q.length;i++){
+
+        result=result.concat(Q[i].slice(0,1));
+
+
+    }
+
+    return result;
+    }
+    else console.log('参数不能为空');
+}
+
+// 测试用例
+console.log(removeRepetition("aaa")); // ->a
+console.log(removeRepetition("abbba")); // ->aba
+console.log(removeRepetition("aabbaabb")); // ->abab
+console.log(removeRepetition("")); // ->
+console.log(removeRepetition("abc")); // ->abc
+console.log(removeRepetition("AS 1           2 5555a")); // ->abc
+
+    </script>
+</body>
+</html>
