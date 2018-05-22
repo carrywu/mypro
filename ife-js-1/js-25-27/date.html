@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+   var date=new Date();
+   function getTimes(){
+     date=new Date();
+document.body.innerHTML=getYear()+'-'+getMonth()+'-'+getDates()+' '+'星期'+getDay()+' '+getHours()+':'+getMinutes()+':'+getSeconds()+' '+(date.getHours()<12 && date.getHours>=0? 'PM':'AM' );
+
+console.log(1);
+};
+ function getYear(){
+    var year=date.getFullYear();
+
+    return year;
+}
+function getMonth(){
+    var month=date.getMonth();
+
+    return month+1;
+}
+
+ function getDates(){
+    var dates=date.getDate();
+    return dates;
+}
+function getDay(){
+    var day=['日','一','二','三','四','五','六'];
+    return day[date.getDay()];
+} 
+function getHours(){
+    var hours=date.getHours();
+
+    if(hours<9) hours='0'+hours;
+
+    return hours;
+}
+function getMinutes(){
+
+    var m=date.getMinutes();
+
+    if(m<9) m='0'+m;
+    return m;
+}
+function getSeconds(){
+    var ms=date.getSeconds();
+    if(ms<9) ms='0'+ms;
+    return ms;
+}
+setInterval(getTimes,1000);
+   </script>
+</body>
+</html>

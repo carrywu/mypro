@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <select id="year-select">
+                <option value="2000">2000</option>
+                <option value="2001">2001</option>
+                <option value="2002">2002</option>
+                ……
+                <option value="2032">20032</option>
+            </select>
+            
+            <select id="month-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                ……
+                <option value="12">12</option>
+            </select>
+            
+            <select id="day-select">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                ……
+                <option value="31">31</option>
+            </select>
+            
+            <select id="hour-select">
+                <option value="0">00</option>
+                <option value="1">01</option>        
+                ……
+                <option value="23">23</option>
+            </select>
+            
+            <select id="minite-select">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                ……
+                <option>59</option>
+            </select>
+            
+            <select id="second-select">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                ……
+                <option>59</option>
+            </select>
+            
+            <p id="result-wrapper">现在距离 2001年1月1日星期X HH:MM:SS 还有 X 天 X 小时 X 分 X 秒</p>
+
+            <script>
+            
+            window.onload=function () {
+                
+                
+            var select=document.getElementsByTagName('select'),
+                result=document.getElementById('result-wrapper'),
+                dates=new Date(),
+                datess=new Date();
+                for(var i=0;i<select.length;i++){
+            select[i].addEventListener('change',function(){
+                dates=new Date(),
+                datess=new Date();
+
+                    datess.setFullYear(select[0].value,select[1].value,select[2].value);
+                    datess.setHours(select[3].value,select[4].value,select[5].value);
+
+                result.textContent='现在距离'+' '+select[0].value+'年'+(select[1].value)+'月'+select[2].value+'日'+'星期'+getDay(datess)+' '+select[3].value+':'+select[4].value+':'+select[5].value+' '+setdate();
+
+                dates=null;
+
+
+                
+            });
+            }
+            function getDay(day){
+
+    var days=['日','一','二','三','四','五','六'];
+
+    return days[day.getDay()];
+                                } 
+            function setdate() {
+                
+            if(dates-datess<0){
+                var year=Math.floor((datess-dates)/(12*30*24*3600*1000));
+                var leve1=(datess-dates)%(12*30*24*3600*1000);
+
+                var month=Math.floor(leve1/(30*24*3600*1000));
+                var leve2=leve1%(30*24*3600*1000);
+
+                var day=Math.floor(leve2/(24*3600*1000));
+                var leve3=leve2%(24*3600*1000);
+                
+                var hour=Math.floor(leve3/(24*3600*1000));
+                var leve4=leve3%(24*3600*1000);
+
+                var min=Math.floor(leve4/(3600*1000));
+                var leve5=leve4%(3600*1000);
+
+                var sec=Math.round(leve5/(60*1000));
+
+                
+                console.log(year,month,day,hour,min,sec);
+                var future='还需要：'+year+'年'+month+'月'+day+'天'+hour+'小时'+min+'分钟'+sec+'秒';
+
+                
+
+                
+
+                return future;
+            }                
+            if(dates-datess>0){
+                var year=Math.floor((dates-datess)/(12*30*24*3600*1000));
+                var leve1=(dates-datess)%(12*30*24*3600*1000);
+
+                var month=Math.floor(leve1/(30*24*3600*1000));
+                var leve2=leve1%(30*24*3600*1000);
+
+                var day=Math.floor(leve2/(24*3600*1000));
+                var leve3=leve2%(24*3600*1000);
+                
+                var hour=Math.floor(leve3/(24*3600*1000));
+                var leve4=leve3%(24*3600*1000);
+
+                var min=Math.floor(leve4/(3600*1000));
+                var leve5=leve4%(3600*1000);
+
+                var sec=Math.round(leve5/(60*1000));
+
+                
+                console.log(year,month,day,hour,min,sec);
+                var future='过去了：'+year+'年'+month+'月'+day+'天'+hour+'小时'+min+'分钟'+sec+'秒';
+
+                
+
+                
+
+                return future; 
+            }
+                        else return false;
+
+            }
+            }
+
+         
+            </script>
+</body>
+</html>
