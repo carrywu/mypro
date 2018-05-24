@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        
+
+        html{
+            margin: 0;
+            padding: 0;
+
+        }
+        div.box{
+            text-align: center;
+            margin-top: 200px;
+            font-size: 2rem;
+        }
+        input{
+            display: inline-block;
+            height:40px;
+            width: 400px;
+            border-style: none;
+            border-radius: 5px;
+            border: 1px solid rgb(33, 33,33);
+            text-indent: 1rem;
+            font-size: 2rem;
+        }
+        ul{
+            width: 400px;
+            margin: 0 auto;
+            list-style: none;
+            padding: 0;
+            border-radius: 5px;
+            display: none;
+        }
+        ul>li{
+            text-align: left;
+            margin: 1px auto;
+            background-color: rgb(33, 33,33);
+            color: seashell;
+            text-indent: 1rem;
+            border-radius: 5px;
+            overflow: hidden;
+            cursor: pointer;
+           
+        }
+        ul>li:hover{
+            background-color: seashell;
+            color: rgb(33, 33,33);
+        }
+        ul>li:first-child{
+            margin: auto;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+
+    <input type="text" autofocus="yes" maxlength="14" placeholder="请输入您的邮箱地址">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<script>
+
+    var text=document.getElementsByTagName('input')[0],
+        thing=document.getElementsByTagName('ul')[0], 
+        lis=thing.children,
+        index=0,
+        key=null;
+    
+        text.onkeyup=function(e){
+
+            var uni=e.keyCode || e.which,
+                key=uni,
+                ary=''
+                console.log(key);
+                ary=text.value;
+            
+            
+            showAndHide(ary);
+            
+
+            function addEm(){
+                var arys=['qq.com','163.com','4399.com'];
+                
+
+                
+
+            if(ary.indexOf('@')>-1){
+
+                var concat=ary.slice(ary.indexOf('@')+1);
+                    
+                if(concat.indexOf('q')>-1){
+            //         thing.removeChild(lis[0]);
+                
+            //         var li=document.createElement('li'),
+            //     text=trim(ary)+'  '+'@'+arys[0];
+            //     li.textContent=text;
+            // thing.appendChild(li);
+            thing.innerHTML='<li>'+trim(ary)+'@qq.com'+'</li>';
+            return;
+            
+                }
+                if(concat.indexOf('1')>-1){
+                //     thing.removeChild(lis[0]);
+               
+                //     var li=document.createElement('li'),
+                // text=trim(ary)+'  '+'@'+arys[1];
+                // li.textContent=text;
+            // thing.appendChild(li);
+            thing.innerHTML='<li>'+trim(ary)+'@163.com'+'</li>';
+            return;
+                }
+                if(concat.indexOf('4')>-1){
+            //         thing.removeChild(lis[0]);
+              
+            //         var li=document.createElement('li'),
+            //     text=trim(ary)+'  '+'@'+arys[2];
+            //     li.textContent=text;
+            // thing.appendChild(li);
+            thing.innerHTML='<li>'+trim(ary)+'@4399.com'+'</li>';
+            return;
+                }
+                return;
+            }   
+            //     thing.removeChild(lis[0]);
+            //     thing.removeChild(lis[0]);
+            //     thing.removeChild(lis[0]);
+            //     for(var j=0;j<3;j++){
+            // var li=document.createElement('li'),
+            //     text=trim(ary)+'  '+'@'+arys[j];
+            //     li.textContent=text;
+            // thing.appendChild(li);
+            
+            // }
+            thing.innerHTML='<li>'+trim(ary)+'@qq.com'+'</li>';
+            thing.innerHTML+='<li>'+trim(ary)+'@163.com'+'</li>';
+            thing.innerHTML+='<li>'+trim(ary)+'@4399.com'+'</li>';
+                
+        }addEm();
+
+        cgbc(key);
+
+        }
+        function cgbc(key) {
+            
+        
+        if(thing.style.display){
+                console.log(key);
+                thing.firstChild.style.backgroundColor='red';
+
+if (key==38) {
+    
+    thing.firstChild.style.backgroundColor='black';
+    index--;
+    if(!lis[index]) index=lis.length-1;
+    lis[index].style.backgroundColor='red';
+    
+}
+if(key==40){
+    
+    thing.firstChild.style.backgroundColor='black';
+    index++;
+    if(!lis[index]) index=0;
+    lis[index].style.backgroundColor='red';
+}
+if(key==13  ){
+    console.log(thing.style.display);
+    text.value=lis[index].textContent || lis[index].innerText;
+
+    thing.style.display='none';
+    console.log(thing.style.display);
+
+    text.focus();
+}
+if(key==27) text.select();
+thing.onclick=function(){
+    text.value=lis[index].textContent || lis[index].innerText;
+
+thing.style.display='none';
+
+text.focus();
+
+}
+
+            }
+        }
+
+        function trim(ary) {
+            var arys=ary.split('');
+            var newAry=[]
+            for(var i=0;i<arys.length;i++){
+                if(arys[i].indexOf(' ')<0 && arys[i].indexOf('　')<0)newAry.push(ary[i]);
+            }
+            newAry=newAry.join('');
+            if((newAry.indexOf('@'))>-1){
+                // var concat=newAry.slice(newAry.indexOf('@'));
+                newAry=newAry.slice(0,(newAry.indexOf('@')));
+                
+
+            }
+            return newAry;
+        }
+
+        function showAndHide(ary){
+            var arys=ary.split('');
+            if(ary && arys[0].indexOf(' ')<0 && arys.indexOf('　')<0) thing.style.display='block';
+            else thing.style.display='none';
+        }
+
+       thing.onclick=function(e){
+           text.value=e.target.textContent;
+
+           thing.style.display='none';
+       }
+        
+</script>
+</body>
+</html>
