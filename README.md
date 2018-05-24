@@ -7,4 +7,4 @@ https://wza62692371.github.io/mypro/ife-js-1/js-十到二进制限制位数.html
 https://wza62692371.github.io/mypro/ife-js-1/findthedom.html
 https://wza62692371.github.io/mypro/ife-js-1/js-20-21/cgimg/cgimg.html
 https://wza62692371.github.io/mypro/ife-js-1/js-25-27/getdate.html
-https://wza62692371.github.io/mypro/ife-js-1/js-25-27/form.html
+https://wza62692371.github.io/mypro/ife-js-1/js-28-30/form.html
